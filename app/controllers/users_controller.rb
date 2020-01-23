@@ -3,4 +3,8 @@ class UsersController < ApplicationController
         byebug
     end
 
+    private
+    def user_params
+        params.permit(:username, :password)
+    end
 end
