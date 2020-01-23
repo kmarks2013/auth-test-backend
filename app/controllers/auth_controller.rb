@@ -6,7 +6,7 @@ class AuthController < ApplicationController
 
         if is_authenticated
             # implmenting JWT to retrun just a token
-            payload = {user_id: user.id}
+            payload = user_payload(user)
             # token = JWT.encode(payload, "secretkeyexample", 'HS256')
             # render json: user
             render json: { token: encode_token(payload) }
